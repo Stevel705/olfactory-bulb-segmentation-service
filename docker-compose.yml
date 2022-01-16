@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  segmentation-server:
+    build: segmentation-server/
+    ports: 
+      - 8000:8000
+    networks:
+      - bridge_network
+    container_name: segmentation-server
+
+  streamlit-ui:
+    build: streamlit-ui/
+    depends_on:
+      - segmentation-server
+    ports: 
+        - 8001:8001
+    networks:
+      - bridge_network
+    container_name: streamlit-ui
+
+networks:
+  bridge_network:
+    driver: bridge

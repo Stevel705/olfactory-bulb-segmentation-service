@@ -7,7 +7,8 @@ from fastapi import FastAPI, File
 
 app = FastAPI(
     title="Olfactory bulb segmentation",
-    description="""Obtain semantic segmentation mask of the image in input via U-Net implemented in PyTorch.""",
+    description="""Obtain semantic segmentation mask of the image in input via U-Net implemented in PyTorch.
+                Visit this URL at port 8001 for the streamlit interface.""",
     version="0.0.1",
 )
 
